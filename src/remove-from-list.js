@@ -22,24 +22,24 @@ const { ListNode } = require('../extensions/list-node.js');
  *   }
  * }
  */
-function removeKFromList( l, k) {
-  let prev = null
-  let pointer = l
+ function removeKFromList(l, val) {
+  let prev = null;
+  let pointer = l;
 
   while (pointer != null) {
-    if (pointer.k == k) {
+    if (pointer.value == val) {
       if (prev != null) {
-          prev.next = pointer.next
+          prev.next = pointer.next;
       } else {
-        l = pointer.next
+        l = pointer.next;
       }
-      pointer = pointer.next
+      pointer = pointer.next;
     } else {
-      prev = pointer
-      pointer = pointer.next
+      prev = pointer;
+      pointer = pointer.next;
     }
   }
-  return l
+  return l;
 }
 
 module.exports = {
